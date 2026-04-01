@@ -1,0 +1,373 @@
+/* ========== RESET BASIC STYLES ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    color: white;
+    padding-bottom: 100px;
+}
+
+/* ========== MAIN CONTAINER ========== */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+/* ========== BACK BUTTON ========== */
+.back-button {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.back-button:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* ========== ALBUM SECTION ========== */
+.album-area {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.album-art {
+    width: 320px;
+    height: 320px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    flex-shrink: 0;
+}
+
+.album-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.album-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.album-label {
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.album-heading {
+    font-size: 64px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.artist-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.verified-icon {
+    background-color: #1db954;
+    color: white;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+/* ========== SONGS LIST ========== */
+.songs-area {
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    padding: 25px;
+}
+
+.songs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    margin-bottom: 18px;
+}
+
+.songs-title {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.songs-number {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 13px;
+}
+
+/* ========== SONG ITEM ========== */
+.song-row {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    gap: 18px;
+}
+
+.song-row:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.song-row.active {
+    background-color: rgba(255, 255, 255, 0.18);
+}
+
+.song-index {
+    width: 28px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.song-art {
+    width: 48px;
+    height: 48px;
+}
+
+.song-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.song-data {
+    flex: 1;
+}
+
+.song-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.song-creator {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.song-time {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 13px;
+}
+
+.mini-play {
+    width: 38px;
+    height: 38px;
+    background-color: #1db954;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.song-row:hover .mini-play {
+    opacity: 1;
+}
+
+/* ========== PLAYER BAR (FIXED BOTTOM) ========== */
+.player-strip {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(30, 60, 114, 0.92));
+    padding: 16px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.player-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 220px;
+}
+
+.player-art {
+    width: 56px;
+    height: 56px;
+}
+
+.player-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.player-text h4 {
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.player-text p {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.player-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    max-width: 550px;
+}
+
+.player-buttons {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.btn-control {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.btn-control:hover {
+    color: #1db954;
+}
+
+.btn-main {
+    width: 42px;
+    height: 42px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: black;
+}
+
+.btn-main:hover {
+    transform: scale(1.08);
+    color: black;
+}
+
+.progress-wrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.time-display {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.65);
+    min-width: 38px;
+}
+
+.progress-track {
+    flex: 1;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.28);
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+}
+
+.progress-current {
+    height: 100%;
+    background-color: white;
+    border-radius: 2px;
+    width: 0%;
+    transition: width 0.1s;
+}
+
+.progress-track:hover .progress-current {
+    background-color: #1db954;
+}
+
+.player-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 140px;
+}
+
+.volume-icon {
+    font-size: 18px;
+}
+
+.volume-track {
+    width: 90px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.28);
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+}
+
+.volume-current {
+    height: 100%;
+    background-color: white;
+    border-radius: 2px;
+    width: 70%;
+}
+
+.volume-track:hover .volume-current {
+    background-color: #1db954;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .album-heading {
+        font-size: 42px;
+    }
+    
+    .album-art {
+        width: 240px;
+        height: 240px;
+    }
+    
+    .player-strip {
+        flex-direction: column;
+        padding: 12px 15px;
+    }
+    
+    .player-left {
+        min-width: 100%;
+    }
+    
+    .player-right {
+        display: none;
+    }
+}

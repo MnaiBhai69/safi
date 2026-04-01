@@ -1,0 +1,537 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base font and background for the whole page */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0e1711;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Make images never overflow their container */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove bullet points from all lists */
+ul {
+  list-style: none;
+}
+
+/* Remove default button styles so we can design our own */
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 50px;
+  /* pill shape */
+  padding: 10px 24px;
+  transition: opacity 0.2s;
+  /* smooth fade on hover */
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+
+/* 
+   2. CSS VARIABLES (custom colours & sizes)
+   Change these values to restyle the whole page quickly.
+ */
+
+:root {
+  --green: #1db954;
+  --dark: #0f0f0f;
+  --card-bg: #181818;
+  --card-hover: #282828;
+  --text-muted: #b3b3b3;
+  --section-pad: 80px 40px;
+}
+
+
+/* 
+   3. NAVBAR
+ */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background-color: #000000;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-icon img {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  width: 140px;
+}
+
+/* Wrapper for the two buttons in the navbar */
+.navbar-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+/* "Log in" button — transparent, white text */
+.btn-login {
+  background: transparent;
+  color: var(--text-muted);
+  border: none;
+}
+
+.btn-login:hover {
+  color: #ffffff;
+}
+
+/* "Sign up free" button — white background, dark text */
+.btn-signup {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+
+/* 
+   4. HERO SECTION
+ */
+
+.hero {
+  padding: 120px 40px;
+  text-align: center;
+  background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+}
+
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.green {
+  color: var(--green);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 36px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.btn-green {
+  background-color: var(--green);
+  color: #000000;
+  font-weight: 700;
+  padding: 14px 32px;
+}
+
+.album-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+    transition: 0.3s;
+  }
+.btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  padding: 14px 32px;
+}
+
+
+/* 
+   5. SHARED SECTION HEADER
+   
+ */
+
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.section-header p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+
+/* 
+   6. FEATURES SECTION
+ */
+.features-grid{
+   display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 20px;
+  justify-items: center;
+  padding: 20px;
+}
+.feature-card {
+  
+      background: #181818;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      margin:  20px;
+      padding: 36px 28px;
+      max-width: 280px;
+      transition: transform 0.2s, background 0.2s, border-color 0.2s;
+    }
+    .feature-card:hover {
+      transform: translateY(-6px);
+      background: #282828;
+      border-color: rgba(29, 185, 84, 0.3);
+    }
+
+    /* 
+       ARTIST IMAGE — circle shape
+     */
+    .artist-img {
+      width: 80px;         
+      height: 80px;         
+      border-radius: 50%;   
+      object-fit: cover;    
+      object-position: top; 
+      display: block;       
+
+      margin-bottom: 20px;  
+
+      
+      border: 3px solid #1db954;
+
+      
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    /* Hover pe image thodi badi ho */
+    .feature-card:hover .artist-img {
+      transform: scale(1.07);
+      box-shadow: 0 0 0 5px rgba(29, 185, 84, 0.3),
+                  0 12px 28px rgba(0, 0, 0, 0.6);
+    }
+
+    /* 
+       TEXT
+     */
+    .feature-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      color: #b3b3b3;
+      font-size: 0.875rem;
+      line-height: 1.7;
+    }
+
+
+
+/* 
+   7. TRENDING / ALBUMS SECTION
+ */
+
+.trending {
+  padding: var(--section-pad);
+  background-color: #111111;
+}
+
+/* Grid of album cards */
+.albums-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Each album card */
+.album-card {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  padding: 14px;
+  transition: background-color 0.2s;
+}
+
+.album-card:hover {
+  background-color: var(--card-hover);
+}
+
+.album-img-wrap {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.album-img-wrap img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Green play button that appears on hover */
+.play-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 44px;
+  height: 44px;
+  background-color: var(--green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+  transform: translateY(6px);
+  cursor: pointer;
+}
+
+/* Show the play button when hovering the card */
+.album-card:hover .play-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.play-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: #000000;
+}
+
+/* Album title */
+.album-card h6 {
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* Artist name */
+.album-card span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+
+
+/* FOOTER */
+footer {
+  background-color: #000000;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 64px 40px 32px;
+  font-family: Arial, sans-serif;
+}
+
+/* TOP SECTION */
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+/* BRAND */
+.footer-brand p {
+  color: #b3b3b3;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 260px;
+  margin-bottom: 24px;
+}
+
+/* SOCIAL */
+.social-row {
+  display: flex;
+  gap: 10px;
+}
+
+.social-btn {
+  width: 38px;
+  height: 38px;
+  background-color: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.social-btn:hover {
+  background-color: #1db954;
+  border-color: #1db954;
+}
+
+/* .social-btn svg {
+  width: 17px;
+  height: 17px;
+  fill: #ffffff;
+} */
+
+/* .social-btn:hover svg {
+  fill: #000000;
+} */
+
+/* COLUMNS */
+.footer-col h6 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 18px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  color: #b3b3b3;
+  font-size: 0.9rem;
+  padding: 6px 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.footer-col ul li:hover {
+  color: #ffffff;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom p {
+  color: #6a6a6a;
+  font-size: 0.8rem;
+}
+
+/* LINKS */
+.footer-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-links span {
+  color: #6a6a6a;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.footer-links span:hover {
+  color: #ffffff;
+}
+
+/* 
+   11. RESPONSIVE — smaller screens
+   When the screen is 900px wide or less, stack the grids.
+ */
+
+@media (max-width: 900px) {
+
+  /* Hero headline gets smaller */
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  /* Features: 2 columns instead of 4 */
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Albums: 3 columns instead of 6 */
+  .albums-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Plans: stack vertically */
+  .plans-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  /* Footer: stack vertically */
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Very small screens (phones) */
+@media (max-width: 560px) {
+
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  /* Stack the hero buttons */
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Albums: 2 columns */
+  .albums-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Features: 1 column */
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer: 1 column */
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  /* Navbar: tighter padding */
+  .navbar {
+    padding: 16px 20px;
+  }
+
+  .hero {
+    padding: 80px 20px;
+  }
+}

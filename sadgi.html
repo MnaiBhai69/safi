@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spotify Player</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #fff;
+}
+
+/* Navbar */
+.navbar {
+  background: #000;
+  padding: 10px 20px;
+}
+
+.logo-icon img {
+  height: 40px;
+}
+
+/* Center Player */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+/* Card */
+.pplayer {
+  background-color: #181818;
+  padding: 25px;
+  border-radius: 15px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* Image */
+.pplayer img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Title */
+.song-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.artist {
+  font-size: 14px;
+  color: #b3b3b3;
+  margin-bottom: 15px;
+}
+
+/* Audio */
+audio {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Buttons */
+.controls {
+  margin-top: 15px;
+}
+
+button {
+  background-color: #1db954;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 50px;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #064f1f;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo-icon">
+    <a href="index.html"><img src="image/logo.png" alt="Logo"></a>
+  </div>
+</nav>
+
+<!-- Player Center -->
+<div class="container">
+  <div class="pplayer">
+
+    <!-- Image -->
+    <img src="image/mfak.jpg" alt="Album">
+
+    <!-- Song Info -->
+    <div class="song-title">SAADGI</div>
+    <div class="artist">Ustad NFAK</div>
+
+    <!-- Audio -->
+    <audio id="audio" src="mp3/sadgi.mp3"></audio>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button onclick="playSong()">Play</button>
+      <button onclick="pauseSong()">Pause</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+var audio = document.getElementById("audio");
+
+function playSong() {
+  audio.play();
+}
+
+function pauseSong() {
+  audio.pause();
+}
+</script>
+
+</body>
+</html>
